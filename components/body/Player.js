@@ -1,10 +1,19 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Dimensions, Image } from 'react-native';
 
+
+
+
 class Player extends Component {
+
+    bgChange = () => {
+        if (this.props.index % 2 === 0) return true
+    }
+
+
     render() {
         return (
-            <View style={styles.playerContainer}>
+            <View style={[this.bgChange() ? styles.playerContainer : styles.bg]}>
                 <View style={styles.posContainer}>
                     <Text style={styles.posText}>{this.props.index + 1 + "."}</Text>
                     <Image source={this.props.data.country === 'aus' ? require('../../assets/flag1.png') : require('../../assets/flag2.png')} style={styles.flag} />
@@ -34,7 +43,14 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         backgroundColor: '#293141',
-        paddingVertical: 5,
+        paddingVertical: 10,
+        justifyContent: 'center'
+    },
+    bg: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: '#1a1e24',
+        paddingVertical: 10,
         justifyContent: 'center'
     },
     posContainer: {

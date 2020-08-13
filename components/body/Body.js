@@ -29,7 +29,7 @@ class Body extends Component {
 const styles = StyleSheet.create({
     bodyContainer: {
         flex: 1,
-    }
+    },
 })
 
 export default Body;

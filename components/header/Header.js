@@ -18,7 +18,7 @@ class Header extends Component {
 
 const styles = StyleSheet.create({
     headerContainer: {
-        flex: 1,
+        //flex: 1,
     }
 })
 
